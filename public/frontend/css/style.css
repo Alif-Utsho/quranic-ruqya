@@ -1,0 +1,468 @@
+/* common css start */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Tiro Bangla", serif;
+}
+body{
+    overflow-x: hidden;
+    font-family: "Tiro Bangla", serif;
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+img{
+    vertical-align: middle;
+}
+
+
+/* common css end */
+
+/* uppernav */
+#uppernav{
+    background-color: #c8b79b;
+    height: 35px;
+}
+.uppernav-text{
+    padding: 6px 0;
+    display: flex;
+    column-gap: 15px;
+}
+.uppernav-text p{
+    color: black;
+}
+.uppernav-text a{
+    color: black;
+}
+.social ul{
+    display: flex;
+    justify-content: end;
+}
+.social{
+    padding: 6px;
+}
+.social ul li a{
+   color: black;
+}
+/* upper nav */
+/* navbar */
+.navbar-brand img{
+    height: 100px;
+}
+.navbar {
+	background: #263747;
+	height: 98px;
+}
+.nav-link{
+    color: white;
+
+}
+/* Show dropdown menus on hover */
+.navbar-nav .dropdown:hover > .dropdown-menu {
+    display: block;
+  }
+  
+  /* Align child dropdowns */
+  .dropdown-menu .dropdown:hover > .dropdown-menu {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 100%; /* Aligns child menu to the right */
+    margin-top: -1px; /* Smooth alignment */
+  }
+  
+  /* Prevent hover issues */
+  .dropdown-menu .dropdown {
+    position: relative;
+  }
+  
+  /* Add indicator for subcategories */
+  .dropdown-menu .dropdown-item.dropdown-toggles::after {
+    content: '\203A'; /* Adds arrow for submenus */
+    float: right;
+  }
+  .nav-link:hover{
+    color: white;
+  }
+  .navbar-brand{
+    color: white;
+  font-size: 26px;
+  }
+  .navbar-brand:hover{
+    color: white;
+  }
+/* navbar */
+
+/* banner */
+.carousel-caption h5 {
+	color: white;
+	font-size: 40px;
+	font-weight: 600;
+}
+.carousel-caption p{
+    color: white;
+  width: 500px;
+  margin: auto;
+}
+.carousel-caption {
+	top: 36%;
+	/* transform: translateY(-50%); */
+}
+.carousel-caption a{
+    padding: 9px 25px;
+    background:  #c8b79b;
+    font-size: 20px;
+    color: black;
+    border-radius: 5px;
+    transition: 0.4s ease;
+}
+.carousel-caption a:hover{
+    background: white;
+    color: black;
+}
+.banner-img img{
+    filter: brightness(50%);
+    height: 600px;
+}
+.carousel-dark .carousel-control-next-icon, .carousel-dark .carousel-control-prev-icon {
+	filter: brightness(100%) !important;
+	/* background-color: white; */
+}
+/* banner */
+
+/* categoreis */
+
+
+  .swiper {
+    width: 100%;
+    height: 500px;
+  }
+  .categories-main{
+    position: relative;
+    transition: 0.4s ease;
+    border: 1px solid #ddd;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: 0.2s ease;
+  }
+  .categories-main:hover{
+    box-shadow: 1px 0px 5px 0px rgba(0,0,0,0.75);
+-webkit-box-shadow: 1px 0px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 1px 0px 5px 0px rgba(0,0,0,0.75);
+  }
+.overlay{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height:20%;
+    background-color: #263747;
+    transition: 0.4s ease;
+    padding: 10px;
+}
+.categories-main:hover .overlay{
+    height: 70%;
+    background-color: #263747c3;
+}
+.categories-main a img{
+  height: 220px;
+}
+.overlay h4{
+  color: white;
+  font-weight: 500;
+}
+.overlay p{
+  color: white;
+}
+.click{
+  padding: 6px 20px;
+  background-color: #c8b79b;
+  color: black;
+  border-radius: 10px;
+}
+.click:hover{
+    background-color: white;
+    color: black;
+}
+.gapp{
+  row-gap: 20px;
+}
+/* categories */
+
+/* latest */
+.post-img{
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  transition: 0.4s ease;
+  box-shadow: 1px 0px 5px 0px rgba(0,0,0,0.75);
+-webkit-box-shadow: 1px 0px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 1px 0px 5px 0px rgba(0,0,0,0.75);
+transition: 0.4s ease;
+}
+.post-img img{
+  height: 305px;
+}
+.post-img:hover{
+  transform: scale(1.04);
+}
+
+.overlay-post{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: #263747cf;
+  transition: 0.4s ease;
+  opacity: 0;
+}
+.overlay-post h3{
+  position: absolute;
+  top: 50%;
+  left:20px;
+  transform: translateY(-50%);
+  color: white;
+  font-size: 25px;
+  text-decoration: underline;
+}
+.post-img:hover .overlay-post{
+  height: 100%;
+  opacity: 1;
+}
+/* latest */
+
+/* contact form */
+.contact-form{
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: white;
+  box-shadow: 1px 0px 5px 0px rgba(0,0,0,0.75);
+-webkit-box-shadow: 1px 0px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 1px 0px 5px 0px rgba(0,0,0,0.75);
+}
+
+/* contact form */
+
+/* marquee */
+.marquee{
+background-color: #263747;
+ 
+}
+.marquee-inner{
+  display: flex;
+  gap: 20px;
+  padding-top: 15px; 
+}
+.marquee-inner p{
+  color: white;
+  font-size: 17px;
+}
+/* marquee */
+
+/* footer */
+#footer{
+  background-color: #263747;
+  padding: 20px 0;
+  padding-bottom: 0 !important;
+}
+.footer-main{
+  padding: 20px;
+}
+.footer-main h4{
+  color: white;
+  font-weight: 600;
+}
+.footer-main ul li a{
+  color: rgba(255, 255, 255, 0.669);
+  font-size: 17px;
+}
+.footer-main ul li{
+  padding-bottom: 10px;
+  font-weight: 400;
+}
+.form-control {
+  background-color: #fff;
+  border: none;
+  border-radius: 5px;
+  box-shadow: none;
+  margin-bottom: 15px;
+}
+.btn-submit {
+  background-color: #28a745; /* Matches the green button */
+  color: #fff;
+  border: none;
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+.btn-submit:hover {
+  background-color: #218838; /* Darker shade for hover effect */
+}
+/* footer */
+
+/* preloader */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  background-color: #263747;
+}
+
+.preloader-logo img {
+  height: 150px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/* preloader */
+.form-control{
+  border: 1px solid #ddd;
+}
+.category-header {
+  background-color: #EAF2F8;
+  font-weight: bold;
+  padding: 10px;
+  border: 1px solid #dce5ec;
+  border-radius: 5px;
+}
+.category-list {
+  padding-left: 20px;
+}
+.quicktech-h {
+	border: 1px solid #ddd;
+	height: 680px;
+	overflow-x: auto;
+  border-radius: 5px;
+}
+.category-list li {
+	padding: 5px 0;
+	border-bottom: 1px dotted;
+}
+
+.category-list li a {
+	color: blue ;
+	font-size: 19px;
+}
+
+.audio-inner{
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #f7f7f7;
+  box-shadow: -1px 1px 5px -3px rgba(0,0,0,0.75);
+-webkit-box-shadow: -1px 1px 5px -3px rgba(0,0,0,0.75);
+-moz-box-shadow: -1px 1px 5px -3px rgba(0,0,0,0.75);
+}
+
+.audio-inner a{
+  padding: 6px 20px;
+  background-color: #263747;
+  border-radius: 5px;
+  color: white;
+  border: 2px solid transparent;
+  transition: 0.4s ease;
+}
+.audio-inner a:hover{
+  background-color: transparent;
+  border: 2px solid #263747;
+  color: black;
+}
+.audio-inner audio{
+  width: 100%;
+  padding: 10px 0;
+}
+.audio-inner img{
+  height: 150px;
+}
+.audio-inner p{
+  padding: 2px 15px;
+  background-color: green;
+  width: max-content;
+  border-radius: 20px;
+  color: white;
+  margin: auto;
+  margin-bottom: 15px;
+
+}
+
+   /* Disable interaction with the audio controls */
+   #audioElement {
+    pointer-events: none; /* Prevents interaction */
+    opacity: 0.7; /* Optional: Makes it look disabled */
+}
+
+.audio-inner video{
+  height: 150px;
+  border-radius: 10px;
+}
+
+.audio-inner span{
+  background-color: #ddd;
+  padding: 5px 10px;
+  border-radius: 20px;
+}
+.limited-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: black;
+}
+.limited-lines {
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* সর্বোচ্চ 2 লাইন */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis; /* লুকানো অংশে "..." দেখাবে */
+  padding-top: 10px;
+  color: black;
+}
+.blog-inner{
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 10px;
+}
+.blog-btn{
+  padding: 5px 20px;
+  color: black;
+  background-color: #c8b79b;
+  text-align: center;
+  border-radius: 5px;
+ 
+}
+
+.c-form{
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 1px 0px 5px -2px rgba(0,0,0,0.75);
+-webkit-box-shadow: 1px 0px 5px -2px rgba(0,0,0,0.75);
+-moz-box-shadow: 1px 0px 5px -2px rgba(0,0,0,0.75);
+}
+
+.footer-logo img{
+  height: 200px;
+}
+
+.apply-btn a{
+  padding: 9px 25px;
+  background: #c8b79b;
+  font-size: 20px;
+  color: black;
+  border-radius: 5px;
+}

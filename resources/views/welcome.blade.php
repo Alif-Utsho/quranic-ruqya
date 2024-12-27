@@ -1,1 +1,1 @@
-<h2>Quranic Ruqya</h2>
+@include('frontend.layouts.master')
