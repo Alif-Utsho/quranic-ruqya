@@ -7,7 +7,13 @@ use Illuminate\Http\Request;
 
 class FrontendController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         return view('frontend.index');
+    }
+
+    public function contact()
+    {
+        return view('frontend.pages.contact');
     }
 }

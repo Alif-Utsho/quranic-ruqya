@@ -27,7 +27,7 @@
     <!-- preloader -->
     <div id="preloader">
         <div class="preloader-logo">
-            <img src="{{ asset('frontend/images/logo.jpg') }}-removebg-preview.png') }}" alt="">
+            <img src="{{ asset('frontend/images/logo.jpg-removebg-preview.png') }}" alt="">
         </div>
         <div id="preloader-inner">
 
