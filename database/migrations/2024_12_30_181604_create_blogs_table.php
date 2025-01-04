@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string('subject');
             $table->string('image');
             $table->text('details');
+            $table->boolean('isPopular')->default(false);
+            $table->boolean('isFront')->default(false);
             $table->boolean('status')->default(true);
             $table->timestamps();
         });

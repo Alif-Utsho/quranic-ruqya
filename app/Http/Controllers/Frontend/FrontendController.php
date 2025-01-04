@@ -13,18 +13,20 @@ class FrontendController extends Controller
     {
         $banners = Banner::whereStatus(true)->get();
         $latest_post = Blog::whereStatus(true)->latest()->limit(4)->get();
+        $popular_post = Blog::whereStatus(true)->where('isPopular', true)->latest()->limit(4)->get();
 
-        return view('frontend.index', compact('banners', 'latest_post'));
+        return view('frontend.index', compact('banners', 'latest_post', 'popular_post'));
     }
 
-    public function blogs(Request $request) {
+    public function blogs(Request $request)
+    {
         $blogs = Blog::whereStatus(true)->latest();
 
-        if($request->category){
+        if ($request->category) {
             $blogs->where('category_id', $request->category);
         }
 
-        if($request->sub_category){
+        if ($request->sub_category) {
             $blogs->where('sub_category_id', $request->sub_category);
         }
 
@@ -33,7 +35,8 @@ class FrontendController extends Controller
         return view('frontend.pages.blogs', compact('blogs'));
     }
 
-    public function blogDetails($id){
+    public function blogDetails($id)
+    {
         $blog = Blog::find($id);
         $latest_post = Blog::whereStatus(true)->latest()->where('id', '<>', $blog->id)->limit(4)->get();
 
