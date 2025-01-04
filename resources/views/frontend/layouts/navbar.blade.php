@@ -43,7 +43,7 @@
                         @foreach($category->subcategories as $subcategory)
                         @if($subcategory->has('blogs') && $category->id===1)
                         <li class="dropdown">
-                            <a class="dropdown-item dropdown-toggles" href="{{ route('blogs', ['sub_category'=> $category->id]) }}" id="rukhsarDropdown">{{ $subcategory->title }}</a>
+                            <a class="dropdown-item dropdown-toggles" href="{{ route('blogs', ['sub_category'=> $subcategory->id]) }}" id="rukhsarDropdown">{{ $subcategory->title }}</a>
                             <ul class="dropdown-menu">
                                 @foreach($subcategory->blogs as $sub_category_blog)
                                 <li><a class="dropdown-item" href="{{ route('blog.details', $sub_category_blog->id) }}">{{ $sub_category_blog->title }}</a></li>
@@ -51,7 +51,7 @@
                             </ul>
                         </li>
                         @else
-                        <li><a class="dropdown-item" href="{{ route('blogs', ['sub_category'=> $category->id]) }}">{{ $subcategory->title }}</a></li>
+                        <li><a class="dropdown-item" href="{{ route('blogs', ['sub_category'=> $subcategory->id]) }}">{{ $subcategory->title }}</a></li>
                         @endif
                         @endforeach
                     </ul>

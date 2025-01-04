@@ -6,38 +6,17 @@
     <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
 
         <div class="carousel-inner">
+            @foreach($banners as $banner)
             <div class="carousel-item banner-img active" data-bs-interval="10000">
-                <img src="{{ asset('frontend/images/banner.png') }}" class="d-block w-100" alt="...">
+                <img src="{{ asset($banner->image) }}" class="d-block w-100" alt="...">
                 <div class="carousel-caption  d-md-block">
-                    <h5>হিজামা একটি হারিয়ে যাওয়া সুন্নাহ! </h5>
-                    <p>আল্লাহর রাসুল সাল্লাল্লাহু আলাইহি ওয়াসাল্লাম বলেছেন "জিবরীল আমাকে জানিয়েছেন যে মানুষ চিকিৎসার জন্য যত উপায় অবলম্বন করে তার মধ্যে হিজামাই হলো সর্বোত্তম। (মুস্তাদরাকে হাকিম)
-                    </p>
+                    <h5>{!! $banner->title !!} </h5>
+                    <p>{{ $banner->details }}</p>
                     <br>
-                    <a href="#">যোগাযোগ করুন</a>
+                    <a href="{{ route('contact') }}">যোগাযোগ করুন</a>
                 </div>
             </div>
-            <div class="carousel-item banner-img" data-bs-interval="2000">
-                <img src="{{ asset('frontend/images/banner.png') }}" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-md-block">
-                    <h5>রুকইয়াহ শারইয়াহ </h5>
-                    <p>কুরআন-হাদিসের আলোকে রুকইয়াহ সেবা </p>
-                    <br>
-                    <a href="#">যোগাযোগ করুন</a>
-                </div>
-            </div>
-            <div class="carousel-item banner-img">
-                <img src="{{ asset('frontend/images/banner.png') }}" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-md-block">
-                    <h5>বদনজর, ওয়াসওয়াসা
-                        <br>
-                        জাদু,জীনের আছরের সমস্যার জন্য
-
-                    </h5>
-                    <p>কুরআন-হাদিসের আলোকে পরামর্শ ও চিকিতসা সেবা । </p>
-                    <br>
-                    <a href="#">যোগাযোগ করুন</a>
-                </div>
-            </div>
+            @endforeach
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>

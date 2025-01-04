@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Banner;
 use App\Models\Blog;
 use Illuminate\Http\Request;
 
@@ -10,7 +11,9 @@ class FrontendController extends Controller
 {
     public function index()
     {
-        return view('frontend.index');
+        $banners = Banner::whereStatus(true)->get();
+
+        return view('frontend.index', compact('banners'));
     }
 
     public function blogs(Request $request) {
