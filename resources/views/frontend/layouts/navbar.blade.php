@@ -33,28 +33,29 @@
                     <a class="nav-link" href="{{ route('index') }}">হোমপেইজ</a>
                 </li>
 
-                <!-- আমাদের সেবা -->
+                @foreach($categories as $category)
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button">
-                        আমাদের সেবা
+                        {{ $category->title }}
                     </a>
+                    @if($category->has('subcategories'))
                     <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                        @foreach($category->subcategories as $subcategory)
+                        @if($subcategory->has('blogs') && $category->id===1)
                         <li class="dropdown">
-                            <a class="dropdown-item dropdown-toggles" href="#" id="rukhsarDropdown">রুকইয়াহ</a>
+                            <a class="dropdown-item dropdown-toggles" href="#" id="rukhsarDropdown">{{ $subcategory->title }}</a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="blogdetails.html">রুকইয়াহ কি ? কিভাবে রুকইয়াহ করাবেন?</a></li>
-
                             </ul>
                         </li>
-                        <li class="dropdown">
-                            <a class="dropdown-item dropdown-toggles" href="#" id="hisaabDropdown">হিজামা</a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="blogdetails.html">হিজামা কি</a></li>
-                            </ul>
-                        </li>
-                        <li><a class="dropdown-item" href="blogdetails.html">সংক্ষেপে বিস্তারিত</a></li>
+                        @else
+                        <li><a class="dropdown-item" href="blog.html">{{ $subcategory->title }}</a></li>
+                        @endif
+                        @endforeach
                     </ul>
+                    @endif
                 </li>
+                @endforeach
 
                 <!-- ডাউনলোড -->
                 <li class="nav-item dropdown">
@@ -66,28 +67,6 @@
                         <li><a class="dropdown-item" href="audio.html">রুকইয়াহ আয়াত</a></li>
                         <li><a class="dropdown-item" href="video.html">রুকইয়াহ ভিডিও</a></li>
                         <li><a class="dropdown-item" href="#">রুকইয়াহ এপস</a></li>
-                    </ul>
-                </li>
-
-                <!-- ব্লগ -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="blogDropdown" role="button">
-                        ব্লগ
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="blogDropdown">
-                        <li><a class="dropdown-item" href="blog.html">রুকইয়াহ শরইয়াহ ব্লগ</a></li>
-                        <li><a class="dropdown-item" href="blog.html">হিজামা ব্লগ</a></li>
-                    </ul>
-                </li>
-
-                <!-- আমাদের সোসাল মিডিয়া -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="socialMediaDropdown" role="button">
-                        প্রশিক্ষণ কোর্স
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="socialMediaDropdown">
-                        <li><a class="dropdown-item" href="coursedetails.html">রুকইয়া কোর্স </a></li>
-
                     </ul>
                 </li>
 
