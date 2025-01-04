@@ -20,6 +20,7 @@ Route::get('/blog-details/{id}', [FrontendController::class, 'blogDetails'])->na
 
 Route::get('/audios', [FrontendController::class, 'audios'])->name('audios');
 Route::get('/ayats', [FrontendController::class, 'ayats'])->name('ayats');
+Route::get('/videos', [FrontendController::class, 'videos'])->name('videos');
 
 Route::get('/contact', [FrontendController::class, 'contact'])->name('contact');
 

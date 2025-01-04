@@ -67,7 +67,7 @@
                     <ul class="dropdown-menu" aria-labelledby="downloadDropdown">
                         <li><a class="dropdown-item" href="{{ route('audios') }}">রুকইয়াহ অডিও</a></li>
                         <li><a class="dropdown-item" href="{{ route('ayats') }}">রুকইয়াহ আয়াত</a></li>
-                        <li><a class="dropdown-item" href="video.html">রুকইয়াহ ভিডিও</a></li>
+                        <li><a class="dropdown-item" href="{{ route('videos') }}">রুকইয়াহ ভিডিও</a></li>
                         <li><a class="dropdown-item" href="#">রুকইয়াহ এপস</a></li>
                     </ul>
                 </li>

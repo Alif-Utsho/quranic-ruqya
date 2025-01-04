@@ -89,7 +89,7 @@
                                 <div class="overlay">
                                     <h4>রুকইয়াহ ভিডিও</h4>
                                     <p>রুকইয়াহ ভিডিও</p>
-                                    <a class="click" href="video.html">এখানে ক্লিক করুন</a>
+                                    <a class="click" href="{{ route('videos') }}">এখানে ক্লিক করুন</a>
                                 </div>
                             </div>
                         </a>

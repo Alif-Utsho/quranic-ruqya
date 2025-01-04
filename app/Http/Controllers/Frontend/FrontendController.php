@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Audio;
 use App\Models\Banner;
 use App\Models\Blog;
+use App\Models\Video;
 use Illuminate\Http\Request;
 
 class FrontendController extends Controller
@@ -54,6 +55,12 @@ class FrontendController extends Controller
     {
         $audios = Audio::whereStatus(true)->where('isAyat', true)->latest()->get();
         return view('frontend.pages.audios', compact('audios'));
+    }
+
+    public function videos()
+    {
+        $videos = Video::whereStatus(true)->latest()->get();
+        return view('frontend.pages.videos', compact('videos'));
     }
 
     public function contact()
