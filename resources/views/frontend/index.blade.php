@@ -187,46 +187,18 @@
             </div>
         </div>
         <div class="row gapp my-4">
+            @foreach($latest_post as $latest)
             <div class="col-lg-3 col-6">
-                <a href="blogdetails.html">
+                <a href="{{ route('blog.details', $latest->id) }}">
                     <div class="post-img">
-                        <img src="{{ asset('frontend/images/l1.webp') }}" class="w-100" alt="">
+                        <img src="{{ asset($latest->image) }}" class="w-100" alt="">
                         <div class="overlay-post">
-                            <h3>মাথা ব্যথায়ঃ</h3>
+                            <h3>{{ $latest->title }}</h3>
                         </div>
                     </div>
                 </a>
             </div>
-            <div class="col-lg-3 col-6">
-                <a href="blogdetails.html">
-                    <div class="post-img">
-                        <img src="{{ asset('frontend/images/l2.webp') }}" class="w-100" alt="">
-                        <div class="overlay-post">
-                            <h3>দ্রুত চুল পরে যাচ্ছে!</h3>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-3 col-6">
-                <a href="blogdetails.html">
-                    <div class="post-img">
-                        <img src="{{ asset('frontend/images/l3.webp') }}" class="w-100" alt="">
-                        <div class="overlay-post">
-                            <h3>বৃষ্টিতে ভিজলেই হুট করে জ্বর চলে আসা জ্বীন যাদু বা প্রচন্ড বদনজরে আক্রান্ত হওয়ার অন্যতম লক্ষণ।</h3>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-3 col-6">
-                <a href="blogdetails.html">
-                    <div class="post-img">
-                        <img src="{{ asset('frontend/images/l1.webp') }}" class="w-100" alt="">
-                        <div class="overlay-post">
-                            <h3>মাথা ব্যথায়ঃ</h3>
-                        </div>
-                    </div>
-                </a>
-            </div>
+            @endforeach
         </div>
     </div>
 

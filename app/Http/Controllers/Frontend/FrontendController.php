@@ -12,8 +12,9 @@ class FrontendController extends Controller
     public function index()
     {
         $banners = Banner::whereStatus(true)->get();
+        $latest_post = Blog::whereStatus(true)->latest()->limit(4)->get();
 
-        return view('frontend.index', compact('banners'));
+        return view('frontend.index', compact('banners', 'latest_post'));
     }
 
     public function blogs(Request $request) {
