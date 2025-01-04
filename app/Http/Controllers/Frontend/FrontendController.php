@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Blog;
 use Illuminate\Http\Request;
 
 class FrontendController extends Controller
@@ -10,6 +11,29 @@ class FrontendController extends Controller
     public function index()
     {
         return view('frontend.index');
+    }
+
+    public function blogs(Request $request) {
+        $blogs = Blog::whereStatus(true)->latest();
+
+        if($request->category){
+            $blogs->where('category_id', $request->category);
+        }
+
+        if($request->sub_category){
+            $blogs->where('sub_category_id', $request->sub_category);
+        }
+
+        $blogs = $blogs->get();
+
+        return view('frontend.pages.blogs', compact('blogs'));
+    }
+
+    public function blogDetails($id){
+        $blog = Blog::find($id);
+        $latest_post = Blog::whereStatus(true)->latest()->where('id', '<>', $blog->id)->limit(4)->get();
+
+        return view('frontend.pages.blog-details', compact('blog', 'latest_post'));
     }
 
     public function contact()

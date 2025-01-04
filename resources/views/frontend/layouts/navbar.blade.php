@@ -35,7 +35,7 @@
 
                 @foreach($categories as $category)
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button">
+                    <a class="nav-link dropdown-toggle" href="{{ route('blogs', ['category'=> $category->id]) }}" id="servicesDropdown" role="button">
                         {{ $category->title }}
                     </a>
                     @if($category->has('subcategories'))
@@ -43,13 +43,15 @@
                         @foreach($category->subcategories as $subcategory)
                         @if($subcategory->has('blogs') && $category->id===1)
                         <li class="dropdown">
-                            <a class="dropdown-item dropdown-toggles" href="#" id="rukhsarDropdown">{{ $subcategory->title }}</a>
+                            <a class="dropdown-item dropdown-toggles" href="{{ route('blogs', ['sub_category'=> $category->id]) }}" id="rukhsarDropdown">{{ $subcategory->title }}</a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="blogdetails.html">রুকইয়াহ কি ? কিভাবে রুকইয়াহ করাবেন?</a></li>
+                                @foreach($subcategory->blogs as $sub_category_blog)
+                                <li><a class="dropdown-item" href="{{ route('blog.details', $sub_category_blog->id) }}">{{ $sub_category_blog->title }}</a></li>
+                                @endforeach
                             </ul>
                         </li>
                         @else
-                        <li><a class="dropdown-item" href="blog.html">{{ $subcategory->title }}</a></li>
+                        <li><a class="dropdown-item" href="{{ route('blogs', ['sub_category'=> $category->id]) }}">{{ $subcategory->title }}</a></li>
                         @endif
                         @endforeach
                     </ul>
