@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Audio;
 use App\Models\Banner;
 use App\Models\Blog;
 use Illuminate\Http\Request;
@@ -41,6 +42,18 @@ class FrontendController extends Controller
         $latest_post = Blog::whereStatus(true)->latest()->where('id', '<>', $blog->id)->limit(4)->get();
 
         return view('frontend.pages.blog-details', compact('blog', 'latest_post'));
+    }
+
+    public function audios()
+    {
+        $audios = Audio::whereStatus(true)->where('isAyat', false)->latest()->get();
+        return view('frontend.pages.audios', compact('audios'));
+    }
+
+    public function ayats()
+    {
+        $audios = Audio::whereStatus(true)->where('isAyat', true)->latest()->get();
+        return view('frontend.pages.audios', compact('audios'));
     }
 
     public function contact()

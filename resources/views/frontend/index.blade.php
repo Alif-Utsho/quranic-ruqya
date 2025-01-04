@@ -71,13 +71,13 @@
                         </a>
                     </div>
                     <div class="col-lg-6 col-sm-6">
-                        <a href="#">
+                        <a href="{{ route('audios') }}">
                             <div class="categories-main">
                                 <img src="{{ asset('frontend/images/c2.jpg') }}" class="w-100" alt="">
                                 <div class="overlay">
                                     <h4>রুকইয়াহ অডিও</h4>
                                     <p>রুকইয়াহ শারইয়ার অডিও ডাউনলোড করতে</p>
-                                    <a class="click" href="audio.html">এখানে ক্লিক করুন</a>
+                                    <a class="click" href="{{ route('audios') }}">এখানে ক্লিক করুন</a>
                                 </div>
                             </div>
                         </a>
@@ -107,13 +107,13 @@
                         </a>
                     </div>
                     <div class="col-lg-6 col-sm-6">
-                        <a href="#">
+                        <a href="{{ route('ayats') }}">
                             <div class="categories-main">
                                 <img src="{{ asset('frontend/images/c5.jpg') }}" class="w-100" alt="">
                                 <div class="overlay">
                                     <h4>রুকইয়াহ আয়াত</h4>
                                     <p>রুকইয়াহর আয়াত লেখাগুলো পড়তে</p>
-                                    <a class="click" href="audio.html">এখানে ক্লিক করুন</a>
+                                    <a class="click" href="{{ route('ayats') }}">এখানে ক্লিক করুন</a>
                                 </div>
                             </div>
                         </a>
