@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\Backend\AuthController;
+use App\Http\Controllers\Backend\DashboardController;
+use App\Http\Controllers\Backend\GeneralsettingController;
+use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Frontend\FrontendController;
 use Illuminate\Support\Facades\Route;
 
@@ -24,3 +28,24 @@ Route::get('/videos', [FrontendController::class, 'videos'])->name('videos');
 
 Route::get('/contact', [FrontendController::class, 'contact'])->name('contact');
 
+Route::middleware('guest')->group(function () {
+    Route::get('admin/login', [AuthController::class, 'login'])->name('login');
+    Route::post('admin/login', [AuthController::class, 'login_submit']);
+});     
+
+Route::middleware(['auth'])->prefix('admin')->group(function () {
+    Route::get('dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
+
+    Route::get('generalsetting/edit', [GeneralsettingController::class, 'edit'])->name('generalsetting.edit');
+    Route::post('generalsetting/update/{id}', [GeneralsettingController::class, 'update'])->name('generalsetting.update');
+
+    Route::get('user/add', [UserController::class, 'add'])->name('user.add');
+    Route::get('user/manage', [UserController::class, 'manage'])->name('user.manage');
+    Route::post('user/store', [UserController::class, 'store'])->name('user.store');
+    Route::get('user/edit/{id}', [UserController::class, 'edit'])->name('user.edit');
+    Route::post('user/update/{id}', [UserController::class, 'update'])->name('user.update');
+    Route::get('user/delete/{id}', [UserController::class, 'delete'])->name('user.delete');
+    Route::get('user/toggle-status/{id}', [UserController::class, 'toggleStatus'])->name('user.toggleStatus');
+
+    Route::post('logout', [AuthController::class, 'logout'])->name('logout');
+});
