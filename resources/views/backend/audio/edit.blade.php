@@ -69,7 +69,7 @@
 
                     <div class="form-group">
                         <label for="detailsInput">Details</label>
-                        <textarea type="text" class="form-control @error('details') is-invalid @enderror" id="detailsInput" placeholder="Enter details" name="details">{{ $audio->details }}</textarea>
+                        <textarea type="text" class="form-control editor @error('details') is-invalid @enderror" id="detailsInput" placeholder="Enter details" name="details">{{ $audio->details }}</textarea>
                         @error('details')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
