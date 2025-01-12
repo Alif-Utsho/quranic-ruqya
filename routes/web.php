@@ -3,6 +3,7 @@
 use App\Http\Controllers\Backend\AudioController;
 use App\Http\Controllers\Backend\AuthController;
 use App\Http\Controllers\Backend\BannerController;
+use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\GeneralsettingController;
 use App\Http\Controllers\Backend\UserController;
@@ -64,6 +65,14 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
     Route::post('banner/update/{id}', [BannerController::class, 'update'])->name('banner.update');
     Route::get('banner/delete/{id}', [BannerController::class, 'delete'])->name('banner.delete');
     Route::get('banner/toggle-status/{id}', [BannerController::class, 'toggleStatus'])->name('banner.toggleStatus');
+
+    Route::get('category/add', [CategoryController::class, 'add'])->name('category.add');
+    Route::get('category/manage', [CategoryController::class, 'manage'])->name('category.manage');
+    Route::post('category/store', [CategoryController::class, 'store'])->name('category.store');
+    Route::get('category/edit/{id}', [CategoryController::class, 'edit'])->name('category.edit');
+    Route::post('category/update/{id}', [CategoryController::class, 'update'])->name('category.update');
+    Route::get('category/delete/{id}', [CategoryController::class, 'delete'])->name('category.delete');
+    Route::get('category/toggle-status/{id}', [CategoryController::class, 'toggleStatus'])->name('category.toggleStatus');
 
     Route::post('logout', [AuthController::class, 'logout'])->name('logout');
 });

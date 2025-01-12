@@ -148,6 +148,20 @@
         </div>
     </li>
 
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#category"
+            aria-expanded="true" aria-controls="category">
+            <i class="fas fa-fw fa-list-ul"></i>
+            <span>Categories</span>
+        </a>
+        <div id="category" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="{{ route('category.add') }}">Add</a>
+                <a class="collapse-item" href="{{ route('category.manage') }}">Manage</a>
+            </div>
+        </div>
+    </li>
+
     <!-- Nav Item - Charts -->
     <li class="nav-item">
         <a class="nav-link" href="{{ route('generalsetting.edit') }}">

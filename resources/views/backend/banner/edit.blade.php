@@ -15,7 +15,7 @@
         </div>
         <div class="card-body">
             <div class="table-responsive">
-                <form action="{{ route('banner.update', $banner->id) }}" method="POST">
+                <form action="{{ route('banner.update', $banner->id) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                         <label for="titleInput">Title</label>
