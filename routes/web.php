@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Backend\AudioController;
 use App\Http\Controllers\Backend\AuthController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\GeneralsettingController;
@@ -46,6 +47,14 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
     Route::post('user/update/{id}', [UserController::class, 'update'])->name('user.update');
     Route::get('user/delete/{id}', [UserController::class, 'delete'])->name('user.delete');
     Route::get('user/toggle-status/{id}', [UserController::class, 'toggleStatus'])->name('user.toggleStatus');
+
+    Route::get('audio/add', [AudioController::class, 'add'])->name('audio.add');
+    Route::get('audio/manage', [AudioController::class, 'manage'])->name('audio.manage');
+    Route::post('audio/store', [AudioController::class, 'store'])->name('audio.store');
+    Route::get('audio/edit/{id}', [AudioController::class, 'edit'])->name('audio.edit');
+    Route::post('audio/update/{id}', [AudioController::class, 'update'])->name('audio.update');
+    Route::get('audio/delete/{id}', [AudioController::class, 'delete'])->name('audio.delete');
+    Route::get('audio/toggle-status/{id}', [AudioController::class, 'toggleStatus'])->name('audio.toggleStatus');
 
     Route::post('logout', [AuthController::class, 'logout'])->name('logout');
 });

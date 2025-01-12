@@ -18,40 +18,28 @@
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
     </li>
-    {{--
-    <li class="nav-item">
-        <a class="nav-link" href="{{ route('application.manage') }}">
-    <i class="fas fa-fw fa-tasks"></i>
-    <span>Applications</span></a>
-    </li>
-
-    <li class="nav-item">
-        <a class="nav-link" href="{{ route('appointment.manage') }}">
-            <i class="fas fa-fw fa-calendar-alt"></i>
-            <span>Appointments</span></a>
-    </li>
-
     <!-- Divider -->
     <hr class="sidebar-divider">
-
+    
     <!-- Heading -->
     <div class="sidebar-heading">
-        Contents
+        Medias
     </div>
 
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#courses"
-            aria-expanded="true" aria-controls="courses">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#audios"
+            aria-expanded="true" aria-controls="audios">
             <i class="fas fa-fw fa-book"></i>
-            <span>Courses</span>
+            <span>Audios</span>
         </a>
-        <div id="courses" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+        <div id="audios" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="{{ route('course.create') }}">Create</a>
-                <a class="collapse-item" href="{{ route('course.manage') }}">Manage</a>
+                <a class="collapse-item" href="{{ route('audio.add') }}">Create</a>
+                <a class="collapse-item" href="{{ route('audio.manage') }}">Manage</a>
             </div>
         </div>
     </li>
+    {{--
 
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
