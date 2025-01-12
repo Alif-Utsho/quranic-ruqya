@@ -20,7 +20,7 @@
     </li>
     <!-- Divider -->
     <hr class="sidebar-divider">
-    
+
     <!-- Heading -->
     <div class="sidebar-heading">
         Medias
@@ -50,9 +50,9 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="{{ route('service.create') }}">Create</a>
-                <a class="collapse-item" href="{{ route('service.manage') }}">Manage</a>
-            </div>
-        </div>
+    <a class="collapse-item" href="{{ route('service.manage') }}">Manage</a>
+    </div>
+    </div>
     </li>
 
     <li class="nav-item">
@@ -130,6 +130,20 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="{{ route('user.add') }}">Add</a>
                 <a class="collapse-item" href="{{ route('user.manage') }}">Manage</a>
+            </div>
+        </div>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#banners"
+            aria-expanded="true" aria-controls="banners">
+            <i class="fas fa-fw fa-images"></i>
+            <span>Banners</span>
+        </a>
+        <div id="banners" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="{{ route('banner.add') }}">Add</a>
+                <a class="collapse-item" href="{{ route('banner.manage') }}">Manage</a>
             </div>
         </div>
     </li>

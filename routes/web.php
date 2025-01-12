@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Backend\AudioController;
 use App\Http\Controllers\Backend\AuthController;
+use App\Http\Controllers\Backend\BannerController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\GeneralsettingController;
 use App\Http\Controllers\Backend\UserController;
@@ -55,6 +56,14 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
     Route::post('audio/update/{id}', [AudioController::class, 'update'])->name('audio.update');
     Route::get('audio/delete/{id}', [AudioController::class, 'delete'])->name('audio.delete');
     Route::get('audio/toggle-status/{id}', [AudioController::class, 'toggleStatus'])->name('audio.toggleStatus');
+
+    Route::get('banner/add', [BannerController::class, 'add'])->name('banner.add');
+    Route::get('banner/manage', [BannerController::class, 'manage'])->name('banner.manage');
+    Route::post('banner/store', [BannerController::class, 'store'])->name('banner.store');
+    Route::get('banner/edit/{id}', [BannerController::class, 'edit'])->name('banner.edit');
+    Route::post('banner/update/{id}', [BannerController::class, 'update'])->name('banner.update');
+    Route::get('banner/delete/{id}', [BannerController::class, 'delete'])->name('banner.delete');
+    Route::get('banner/toggle-status/{id}', [BannerController::class, 'toggleStatus'])->name('banner.toggleStatus');
 
     Route::post('logout', [AuthController::class, 'logout'])->name('logout');
 });
